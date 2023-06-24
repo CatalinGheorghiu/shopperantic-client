@@ -1,5 +1,5 @@
 {
-  "name": "ecommerce-front",
+  "name": "shopperantic-client",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -25,5 +25,10 @@
     "react-spinners": "^0.13.8",
     "stripe": "^11.16.0",
     "styled-components": "^5.3.9"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.8"
   }
 }
