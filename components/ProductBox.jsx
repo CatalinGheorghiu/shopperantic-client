@@ -40,6 +40,7 @@ export default function ProductBox({
   function addToWishlist(ev) {
     ev.preventDefault();
     ev.stopPropagation();
+
     const nextValue = !isWished;
     if (nextValue === false && onRemoveFromWishlist) {
       onRemoveFromWishlist(_id);

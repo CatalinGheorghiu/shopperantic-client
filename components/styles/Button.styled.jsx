@@ -14,6 +14,11 @@ export const ButtonStyle = css`
   gap: 0.25rem;
   border-radius: 100px;
 
+  &:disabled {
+    background-color: #cacaca;
+    cursor: not-allowed;
+  }
+
   svg {
     height: 16px;
     margin-right: 5px;

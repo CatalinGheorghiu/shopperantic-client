@@ -2,8 +2,8 @@ import Button from '@/components/Button';
 import Input from '@/components/Input';
 import Spinner from '@/components/Spinner';
 import StarsRating from '@/components/StarsRating';
-import { ColsWrapper } from '@/components/styles/Account/ColumnsWrapper.styled';
 import { ProductDetails } from '@/components/styles/Product/ProductDetails.styled';
+import { ColumnsWrapper } from '@/components/styles/Reviews/ColumnWrapper.styled';
 import { ReviewColumn } from '@/components/styles/Reviews/ReviewColumn.styled';
 import { WhiteBox } from '@/components/styles/Reviews/WhiteBox.styled';
 import Textarea from '@/components/Textarea';
@@ -80,7 +80,7 @@ export default function ProductReviews({ product }) {
 
   return (
     <div style={{ marginTop: '2rem' }}>
-      <ColsWrapper>
+      <ColumnsWrapper>
         <ReviewColumn>
           <WhiteBox>
             <Subtitle>All reviews</Subtitle>
@@ -131,7 +131,7 @@ export default function ProductReviews({ product }) {
             </div>
           </WhiteBox>
         </ReviewColumn>
-      </ColsWrapper>
+      </ColumnsWrapper>
     </div>
   );
 }

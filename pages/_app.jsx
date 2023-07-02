@@ -21,6 +21,18 @@ const GlobalStyles = createGlobalStyle`
     border: 0;
     border-top: 1px solid #ccc;
   }
+
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  * {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 `;
 
 export default function App({

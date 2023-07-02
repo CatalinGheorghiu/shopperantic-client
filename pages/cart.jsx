@@ -3,16 +3,17 @@ import { CartContext } from '@/components/CartContext';
 import Center from '@/components/Center';
 import Header from '@/components/Header';
 import Input from '@/components/Input';
+import { Box } from '@/components/styles/Cart/Box.styled';
 import { CityHolder } from '@/components/styles/Cart/CityHolder.styled';
+import { ColumnsWrapper } from '@/components/styles/Cart/ColumnsWrapper.styled';
 import { ProductImageBox } from '@/components/styles/Cart/ProductImageBox.styled';
 import { ProductInfoCell } from '@/components/styles/Cart/ProductInfoCell.styled';
 import { QuantityLabel } from '@/components/styles/Cart/QuantityLabel.styled';
-import { ColumnsWrapper } from '@/components/styles/ColumnWrapper.styled';
 import Table from '@/components/Table';
 import axios from 'axios';
-import Box from 'next-auth/providers/box';
 import { useSession } from 'next-auth/react';
 import { RevealWrapper } from 'next-reveal';
+import Image from 'next/image';
 import { useContext, useEffect, useState } from 'react';
 
 export default function CartPage() {
@@ -48,7 +49,7 @@ export default function CartPage() {
       clearCart();
     }
     axios.get('/api/settings?name=shippingFee').then((res) => {
-      setShippingFee(res?.data?.value);
+      setShippingFee(parseInt(res?.data?.value));
     });
   }, []);
 
@@ -75,6 +76,9 @@ export default function CartPage() {
   }
 
   async function goToPayment() {
+    if (!name && !email && !city && !postalCode && !streetAddress && !country)
+      return;
+
     const response = await axios.post('/api/checkout', {
       name,
       email,
@@ -84,6 +88,7 @@ export default function CartPage() {
       country,
       cartProducts
     });
+
     if (response.data.url) {
       window.location = response.data.url;
     }
@@ -136,38 +141,48 @@ export default function CartPage() {
                       <tr key={product._id + index}>
                         <ProductInfoCell>
                           <ProductImageBox>
-                            <img src={product.images[0]} alt="" />
+                            <Image
+                              src={product.images[0]}
+                              alt={'product image'}
+                              width={100}
+                              height={100}
+                            />
                           </ProductImageBox>
-                          {product.title}
+
+                          <span>{product.title}</span>
                         </ProductInfoCell>
                         <td>
-                          <Button
-                            onClick={() => lessOfThisProduct(product._id)}
-                          >
-                            -
-                          </Button>
-                          <QuantityLabel>
-                            {
-                              cartProducts.filter((id) => id === product._id)
-                                .length
-                            }
-                          </QuantityLabel>
-                          <Button
-                            onClick={() => moreOfThisProduct(product._id)}
-                          >
-                            +
-                          </Button>
+                          <div>
+                            <Button
+                              onClick={() => lessOfThisProduct(product._id)}
+                            >
+                              -
+                            </Button>
+                            <QuantityLabel>
+                              {
+                                cartProducts.filter((id) => id === product._id)
+                                  .length
+                              }
+                            </QuantityLabel>
+                            <Button
+                              onClick={() => moreOfThisProduct(product._id)}
+                            >
+                              +
+                            </Button>
+                          </div>
                         </td>
                         <td>
-                          $
-                          {cartProducts.filter((id) => id === product._id)
-                            .length * product.price}
+                          <span className="product-price">
+                            $
+                            {cartProducts.filter((id) => id === product._id)
+                              .length * product.price}
+                          </span>
                         </td>
                       </tr>
                     ))}
                     <tr className="subtotal">
                       <td colSpan={2}>Products</td>
-                      <td>${productsTotal}</td>
+                      <td>${parseFloat(productsTotal.toFixed(2))}</td>
                     </tr>
                     <tr className="subtotal">
                       <td colSpan={2}>Shipping</td>
@@ -175,7 +190,9 @@ export default function CartPage() {
                     </tr>
                     <tr className="subtotal total">
                       <td colSpan={2}>Total</td>
-                      <td>${productsTotal + parseInt(shippingFee || 0)}</td>
+                      <td>
+                        ${parseFloat(productsTotal + shippingFee).toFixed(2)}
+                      </td>
                     </tr>
                   </tbody>
                 </Table>
