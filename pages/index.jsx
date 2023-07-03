@@ -48,6 +48,11 @@ export default function HomePage({
           content="https://shopperantics.s3.eu-central-1.amazonaws.com/meta_img.jpg"
         />
 
+        <meta
+          property="og:image:secure_url"
+          content="https://shopperantics.s3.eu-central-1.amazonaws.com/meta_img.jpg"
+        />
+
         <meta property="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:url"
