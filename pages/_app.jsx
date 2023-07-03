@@ -9,6 +9,9 @@ const poppins = Poppins({
 });
 
 const GlobalStyles = createGlobalStyle`
+  html.sr .load-hidden {
+    visibility: hidden;
+  }
 
   body {
     background-color: #eee;

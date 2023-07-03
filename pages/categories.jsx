@@ -64,11 +64,22 @@ export default function CategoriesPage({
             </CategoryTitle>
             <Grid>
               {categoriesProducts[cat._id].map((p, index) => (
-                <RevealWrapper key={p._id + index} delay={index * 50}>
+                <RevealWrapper
+                  key={p._id + index}
+                  className="load-hidden"
+                  origin="top"
+                  delay={200}
+                  duration={1000}
+                >
                   <ProductBox {...p} wished={wishedProducts.includes(p._id)} />
                 </RevealWrapper>
               ))}
-              <RevealWrapper delay={categoriesProducts[cat._id].length * 50}>
+              <RevealWrapper
+                className="load-hidden"
+                origin="left"
+                delay={200}
+                duration={1000}
+              >
                 <ShowAllSquare href={'/category/' + cat._id}>
                   Show all &rarr;
                 </ShowAllSquare>

@@ -7,7 +7,13 @@ export default function aProductsGrid({ products, wishedProducts = [] }) {
     <StyledProductsGrid interval={100}>
       {products?.length > 0 &&
         products.map((product, index) => (
-          <RevealWrapper key={product._id} delay={index * 50}>
+          <RevealWrapper
+            key={product._id}
+            className="load-hidden"
+            origin="left"
+            delay={200}
+            duration={1000}
+          >
             <ProductBox
               {...product}
               wished={wishedProducts.includes(product._id)}

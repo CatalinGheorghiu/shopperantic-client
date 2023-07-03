@@ -121,7 +121,12 @@ export default function CartPage() {
       <Header />
       <Center>
         <ColumnsWrapper>
-          <RevealWrapper delay={0}>
+          <RevealWrapper
+            className="load-hidden"
+            origin="top"
+            delay={200}
+            duration={1000}
+          >
             <Box>
               <h2>Cart</h2>
 
@@ -201,7 +206,12 @@ export default function CartPage() {
           </RevealWrapper>
 
           {!!cartProducts?.length && (
-            <RevealWrapper delay={100}>
+            <RevealWrapper
+              className="load-hidden"
+              origin="top"
+              delay={200}
+              duration={1000}
+            >
               <Box>
                 <h2>Order information</h2>
                 <Input

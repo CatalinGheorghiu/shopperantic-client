@@ -116,7 +116,12 @@ export default function AccountPage() {
       <Center>
         <ColsWrapper>
           <div className={'col-left'}>
-            <RevealWrapper delay={0}>
+            <RevealWrapper
+              className="load-hidden"
+              origin="top"
+              delay={200}
+              duration={1000}
+            >
               <WhiteBox>
                 <Tabs
                   tabs={['Orders', 'Wishlist']}
@@ -179,7 +184,12 @@ export default function AccountPage() {
           </div>
 
           <div className={'col-right'}>
-            <RevealWrapper delay={100}>
+            <RevealWrapper
+              className="load-hidden"
+              origin="top"
+              delay={200}
+              duration={1000}
+            >
               <WhiteBox>
                 <h2>{session ? 'Account details' : 'Login'}</h2>
                 {!addressLoaded && <Spinner fullWidth={true} />}
