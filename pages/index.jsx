@@ -26,6 +26,11 @@ export default function HomePage({
 }
 
 export async function getServerSideProps(ctx) {
+  ctx.res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=10, stale-while-revalidate=59'
+  );
+
   await mongooseConnect();
   const featuredProductSetting = await Setting.findOne({
     name: 'featuredProductId'

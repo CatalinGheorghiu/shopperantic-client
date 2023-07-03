@@ -54,27 +54,17 @@ export default function Featured({ product }) {
           </Column>
 
           <ImgColumn>
-            <RevealWrapper
-              className="load-hidden"
-              rotate={{ x: 12, y: 40, z: 0 }}
-              origin="left"
-              delay={200}
-              duration={1000}
-              distance="500px"
-              reset={true}
-              viewOffset={{ top: 25, right: 0, bottom: 10, left: 5 }}
-            >
-              <CenterImg>
-                <Image
-                  src={product?.images?.[0]}
-                  alt={'Featured Image'}
-                  width={540}
-                  height={360}
-                  className={'main'}
-                  style={{ objectFit: 'cover' }}
-                />
-              </CenterImg>
-            </RevealWrapper>
+            <CenterImg>
+              <Image
+                src={product?.images?.[0]}
+                alt={'Featured Image'}
+                width={540}
+                height={360}
+                className={'main'}
+                style={{ objectFit: 'cover' }}
+                loading={'eager'}
+              />
+            </CenterImg>
           </ImgColumn>
         </ColumnsWrapper>
       </Center>
