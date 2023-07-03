@@ -12,7 +12,14 @@ export default function ProductImages({ images }) {
   return (
     <>
       <BigImageWrapper>
-        <BigImage src={activeImage} />
+        <BigImage>
+          <Image
+            src={activeImage}
+            alt={'Product Image'}
+            width={500}
+            height={500}
+          />
+        </BigImage>
       </BigImageWrapper>
 
       <ImageWrapper>
