@@ -27,7 +27,6 @@ export default function FlyingButton(props) {
 
     return () => clearInterval(interval);
   }, []);
-  console.log('%cSRC: ', 'color: red; font-size: 24px;', props);
 
   return (
     <>
