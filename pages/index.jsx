@@ -38,6 +38,13 @@ export default function HomePage({
           }
           key={'title'}
         />
+
+        <meta
+          property="og:image"
+          content={
+            'https://shopperantics.s3.eu-central-1.amazonaws.com/meta_img.jpg'
+          }
+        />
       </Head>
       <Header />
       <Featured product={featuredProduct} />
