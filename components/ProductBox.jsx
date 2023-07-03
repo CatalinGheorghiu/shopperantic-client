@@ -57,10 +57,20 @@ export default function ProductBox({
     <ProductWrapper>
       <WhiteBox href={url}>
         <div style={{ position: 'relative', width: 'fit-content' }}>
-          <WishlistButton wished={isWished} onClick={addToWishlist}>
+          <WishlistButton
+            wished={isWished}
+            onClick={addToWishlist}
+            title={'Wishlist button'}
+          >
             {isWished ? <HeartSolidIcon /> : <HeartOutlineIcon />}
           </WishlistButton>
-          <Image src={images?.[0]} alt={title} width={320} height={320} />
+          <Image
+            src={images?.[0]}
+            alt={title}
+            width={320}
+            height={320}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
         </div>
       </WhiteBox>
       <ProductInfoBox>

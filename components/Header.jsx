@@ -23,21 +23,36 @@ export default function Header() {
     <StyledHeader>
       <Center>
         <Wrapper>
-          <Logo href={'/'}>Shopperantics</Logo>
+          <Logo href={'/'} name={'Shopperantics logo'}>
+            Shopperantics
+          </Logo>
 
           <Nav mobileNavActive={mobileNavActive}>
-            <NavLink href={'/'}>Home</NavLink>
-            <NavLink href={'/products'}>All products</NavLink>
-            <NavLink href={'/categories'}>Categories</NavLink>
-            <NavLink href={'/account'}>Account</NavLink>
-            <NavLink href={'/cart'}>Cart ({cartProducts.length})</NavLink>
+            <NavLink href={'/'} name={'Home button'}>
+              Home
+            </NavLink>
+            <NavLink href={'/products'} name={'Products button'}>
+              All products
+            </NavLink>
+            <NavLink href={'/categories'} name={'Categories button'}>
+              Categories
+            </NavLink>
+            <NavLink href={'/account'} name={'Account button'}>
+              Account
+            </NavLink>
+            <NavLink href={'/cart'} name={'Cart button'}>
+              Cart ({cartProducts?.length})
+            </NavLink>
           </Nav>
 
           <SideIcons>
-            <Link href={'/search'}>
+            <Link href={'/search'} title={'Search icon button'}>
               <SearchIcon />
             </Link>
-            <NavButton onClick={() => setMobileNavActive((prev) => !prev)}>
+            <NavButton
+              onClick={() => setMobileNavActive((prev) => !prev)}
+              title={'Mobile drawer button'}
+            >
               <BarsIcon />
             </NavButton>
           </SideIcons>
