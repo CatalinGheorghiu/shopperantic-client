@@ -65,7 +65,7 @@ export const ButtonStyle = css`
     !outline &&
     css`
       background-color: ${primaryColor};
-      border: 1px solid ${primaryColor};
+      border: 1px solid #61d525;
       color: #fff;
     `}
   ${({ primary, outline }) =>
