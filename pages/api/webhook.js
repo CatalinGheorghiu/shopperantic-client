@@ -37,6 +37,7 @@ export default async function handler(req, res) {
       }
       break;
     default:
+      // eslint-disable-next-line no-console
       console.log(`Unhandled event type ${event.type}`);
   }
 

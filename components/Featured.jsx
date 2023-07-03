@@ -14,6 +14,7 @@ import { Title } from '@/components/styles/FeaturedProduct/Title.styled';
 import { ImgColumn } from '@/components/styles/ImgColumn.styled';
 
 import { RevealWrapper } from 'next-reveal';
+import Image from 'next/image';
 
 export default function Featured({ product }) {
   return (
@@ -47,7 +48,14 @@ export default function Featured({ product }) {
           <ImgColumn>
             <RevealWrapper delay={0}>
               <CenterImg>
-                <img className={'main'} src={product?.images?.[0]} alt="" />
+                <Image
+                  src={product?.images?.[0]}
+                  alt={'Featured Image'}
+                  width={540}
+                  height={360}
+                  className={'main'}
+                  style={{ objectFit: 'cover' }}
+                />
               </CenterImg>
             </RevealWrapper>
           </ImgColumn>

@@ -1,6 +1,6 @@
 import StarOutline from '@/components/icons/StarOutline';
 import StarSolid from '@/components/icons/StarSolid';
-import { primary } from '@/lib/colors';
+import { primaryColor } from '@/lib/colors';
 import { useState } from 'react';
 import styled from 'styled-components';
 
@@ -10,20 +10,20 @@ const StarsWrapper = styled.div`
   align-items: center;
 `;
 const StarWrapper = styled.button`
-  ${(props) =>
-    props.size === 'md' &&
+  ${({ size }) =>
+    size === 'md' &&
     `
     height: 1.4rem;
     width: 1.4rem;
   `}
-  ${(props) =>
-    props.size === 'sm' &&
+  ${({ size }) =>
+    size === 'sm' &&
     `
     height: 1rem;
     width: 1rem;
   `}
-  ${(props) =>
-    !props.disabled &&
+  ${({ disabled }) =>
+    !disabled &&
     `
     cursor: pointer;
   `}
@@ -31,7 +31,7 @@ const StarWrapper = styled.button`
   border: 0;
   display: inline-block;
   background-color: transparent;
-  color: ${primary};
+  color: ${primaryColor};
 `;
 
 export default function StarsRating({
