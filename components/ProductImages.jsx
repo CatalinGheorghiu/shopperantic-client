@@ -18,6 +18,7 @@ export default function ProductImages({ images }) {
             alt={'Product Image'}
             width={500}
             height={500}
+            loading={'eager'}
           />
         </BigImage>
       </BigImageWrapper>
