@@ -27,6 +27,7 @@ export default function FlyingButton(props) {
 
     return () => clearInterval(interval);
   }, []);
+  console.log('%cSRC: ', 'color: red; font-size: 24px;', props);
 
   return (
     <>
@@ -35,7 +36,13 @@ export default function FlyingButton(props) {
         main={props.main}
         onClick={() => addProduct(props._id)}
       >
-        <Image src={props.src} alt={''} ref={imgRef} width={50} height={25} />
+        <Image
+          src={props.src}
+          alt={'Product Image'}
+          ref={imgRef}
+          width={150}
+          height={150}
+        />
         <button onClick={(ev) => sendImageToCart(ev)} {...props} />
       </FlyingButtonWrapper>
     </>

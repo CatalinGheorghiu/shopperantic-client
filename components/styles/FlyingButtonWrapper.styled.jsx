@@ -32,8 +32,8 @@ export const FlyingButtonWrapper = styled.div`
       left: 65%;
       opacity: 0;
       display: none;
-      max-width: 50px;
-      max-height: 50px;
+      max-width: 150px;
+      max-height: 150px;
     }
   }
 
