@@ -25,25 +25,45 @@ export default function HomePage({
           Shopping Delights
         </title>
         <meta
-          property={'og:description'}
-          content={
-            'Welcome to Shoperantics, the ultimate haven for all your shopping desires! Discover a world of unique and offbeat treasures that are sure to make a statement. Our carefully curated collection features a wide range of products, from fashion-forward apparel and accessories to whimsical home decor and innovative gadgets. With our finger on the pulse of the latest trends, we strive to bring you the most extraordinary and eye-catching items that will make you stand out from the crowd. Explore Shoperantics today and indulge in a shopping experience like no other. Unleash your inner shopaholic and embrace the fun-filled adventure of retail therapy with us!'
-          }
-          key={'content'}
+          name="title"
+          content="Shoperantics | Your One-Stop Destination for Quirky and Trendy Shopping Delights"
         />
         <meta
-          property={'og:title'}
-          content={
-            'Shoperantics | Your One-Stop Destination for Quirky and Trendy Shopping Delights'
-          }
-          key={'title'}
+          name="description"
+          content="Welcome to Shoperantics, the ultimate haven for all your shopping desires! Discover a world of unique and offbeat treasures that are sure to make a statement. Our carefully curated collection features a wide range of products, from fashion-forward apparel and accessories to whimsical home decor and innovative gadgets. With our finger on the pulse of the latest trends, we strive to bring you the most extraordinary and eye-catching items that will make you stand out from the crowd. Explore Shoperantics today and indulge in a shopping experience like no other. Unleash your inner shopaholic and embrace the fun-filled adventure of retail therapy with us!"
         />
 
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://shopperantics.vercel.app/" />
+        <meta
+          property="og:title"
+          content="Shoperantics | Your One-Stop Destination for Quirky and Trendy Shopping Delights"
+        />
+        <meta
+          property="og:description"
+          content="Welcome to Shoperantics, the ultimate haven for all your shopping desires! Discover a world of unique and offbeat treasures that are sure to make a statement. Our carefully curated collection features a wide range of products, from fashion-forward apparel and accessories to whimsical home decor and innovative gadgets. With our finger on the pulse of the latest trends, we strive to bring you the most extraordinary and eye-catching items that will make you stand out from the crowd. Explore Shoperantics today and indulge in a shopping experience like no other. Unleash your inner shopaholic and embrace the fun-filled adventure of retail therapy with us!"
+        />
         <meta
           property="og:image"
-          content={
-            'https://shopperantics.s3.eu-central-1.amazonaws.com/meta_img.jpg'
-          }
+          content="https://shopperantics.s3.eu-central-1.amazonaws.com/meta_img.jpg"
+        />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content="https://shopperantics.vercel.app/"
+        />
+        <meta
+          property="twitter:title"
+          content="Shoperantics | Your One-Stop Destination for Quirky and Trendy Shopping Delights"
+        />
+        <meta
+          property="twitter:description"
+          content="Welcome to Shoperantics, the ultimate haven for all your shopping desires! Discover a world of unique and offbeat treasures that are sure to make a statement. Our carefully curated collection features a wide range of products, from fashion-forward apparel and accessories to whimsical home decor and innovative gadgets. With our finger on the pulse of the latest trends, we strive to bring you the most extraordinary and eye-catching items that will make you stand out from the crowd. Explore Shoperantics today and indulge in a shopping experience like no other. Unleash your inner shopaholic and embrace the fun-filled adventure of retail therapy with us!"
+        />
+        <meta
+          property="twitter:image"
+          content="https://shopperantics.s3.eu-central-1.amazonaws.com/meta_img.jpg"
         />
       </Head>
       <Header />
